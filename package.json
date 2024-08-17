@@ -1,0 +1,23 @@
+{
+  "name": "projekt1",
+  "version": "1.0.0",
+  "description": "Sample Blog web-app",
+  "main": "server.js",
+  "scripts": {
+    "start": "node serever.js",
+    "server": "nodemon server.js"
+  },
+  "author": "Alpha",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "colors": "^1.4.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongoose": "^8.5.2",
+    "mongose": "^0.0.2-security",
+    "morgan": "^1.10.0",
+    "nodemon": "^3.1.4"
+  }
+}
