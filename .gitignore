@@ -128,5 +128,10 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+#env stuffs (Critical-Private)
 .env
 .env.rtf
+
+#Prettier files (Defunct-Setup failed)
+.prettierignore
+.prettierrc
