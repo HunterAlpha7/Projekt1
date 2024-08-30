@@ -16,6 +16,7 @@ import DeleteForeverTwoTone from "@mui/icons-material/DeleteForeverTwoTone";
 import ModeEditTwoTone from "@mui/icons-material/ModeEditTwoTone";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import toast from "react-hot-toast";
 
 export default function BlogCard({
   title,
@@ -33,9 +34,9 @@ export default function BlogCard({
   const handleDelete = async () => {
     try {
       const { data } = await axios.delete(`/api/v1/blog/delete-blog/${id}`);
-      if (data.success) {
-        alert("Blog deleted successfully");
-        navigate("/my-blog");
+      if (data?.success) {
+        toast.success("Blog deleted successfully");
+        window.location.reload();
       }
     } catch (error) {
       console.log(error);
@@ -55,10 +56,10 @@ export default function BlogCard({
       {isUser && (
         <Box display={"flex"}>
           <IconButton onClick={handleEdit} sx={{ marginLeft: "auto" }}>
-            <ModeEditTwoToneIcon />
+            <ModeEditTwoToneIcon color="info" />
           </IconButton>
           <IconButton onClick={handleDelete}>
-            <DeleteForeverTwoToneIcon />
+            <DeleteForeverTwoToneIcon color="red" />
           </IconButton>
         </Box>
       )}

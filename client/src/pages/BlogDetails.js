@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 import { Box, Button, InputLabel, TextField, Typography } from "@mui/material";
+import toast from "react-hot-toast";
 const BlogDetails = () => {
   const [blog, setBlog] = useState({});
   const id = useParams().id;
@@ -46,7 +47,7 @@ const BlogDetails = () => {
         user: id,
       });
       if (data?.success) {
-        alert("Blog created successfully");
+        toast.success("Blog updated successfully");
         navigate("/my-blogs");
       }
     } catch (error) {

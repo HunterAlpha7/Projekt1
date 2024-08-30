@@ -4,6 +4,7 @@ import { Box, Typography, TextField, Button } from "@mui/material";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { authActions } from "../redux/store";
+import toast from "react-hot-toast";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -35,7 +36,7 @@ const Register = () => {
       if (data.success) {
         localStorage.setItem("userId", data?.user._id);
         dispatch(authActions.login());
-        alert(`Welcome back`);
+        toast.success(`Welcome back`);
         navigate("/");
       }
     } catch (error) {
